@@ -11,39 +11,33 @@ import CloudKit
 
 class EntryController {
     
+    
+    static let shared = EntryController()
+    
     var entries: [Entry] = []
     
-    let database = CKContainer.init(identifier: "iCloud.com.blakekvarfordt.CloudKitJournal").privateCloudDatabase
+    let database = CKContainer(identifier: "iCloud.com.blakekvarfordt.CloudKitJournal").privateCloudDatabase
     
     func save(entry: Entry, completion: @escaping (Bool) -> Void) {
         let entry = entry
         let entryRecord = CKRecord(entry: entry)
-        database.save(entryRecord) { (_, error) in
+        database.save(entryRecord) { (record, error) in
             
             if let error = error {
                 print("ERROR with saving the entryRecord \(error) \(error.localizedDescription)")
                 completion(false)
                 return
             }
+            guard let record = record else { return }
+            guard let entry = Entry(ckRecord: record) else { return }
+            self.entries.append(entry)
+            completion(true)
         }
-        self.entries.append(entry)
-        completion(true)
+        
         
     }
     
-    func createEntry(with title: String, text: String, completion: @escaping (Bool) -> Void) {
-        let newEntry = Entry(title: title, text: text)
-        save(entry: newEntry) { (success) in
-            
-            if success {
-                self.entries.append(newEntry)
-                completion(true)
-            } else {
-                completion(false)
-            }
-        }
-       
-    }
+
     
     func fetchEntries(completion: @escaping (Bool) -> Void) {
         

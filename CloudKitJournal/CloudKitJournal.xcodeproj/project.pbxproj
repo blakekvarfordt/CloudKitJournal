@@ -14,6 +14,8 @@
 		6307F19E23146B58009D0BB3 /* Entry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6307F19D23146B58009D0BB3 /* Entry.swift */; };
 		6307F1A123147E64009D0BB3 /* EntryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6307F1A023147E64009D0BB3 /* EntryController.swift */; };
 		6307F1A523148141009D0BB3 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6307F1A423148141009D0BB3 /* CloudKit.framework */; };
+		6307F1A823148FB9009D0BB3 /* EntryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6307F1A723148FB9009D0BB3 /* EntryTableViewController.swift */; };
+		6307F1AA2314913C009D0BB3 /* EntryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6307F1A92314913C009D0BB3 /* EntryDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +29,8 @@
 		6307F1A023147E64009D0BB3 /* EntryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryController.swift; sourceTree = "<group>"; };
 		6307F1A22314813D009D0BB3 /* CloudKitJournal.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CloudKitJournal.entitlements; sourceTree = "<group>"; };
 		6307F1A423148141009D0BB3 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
+		6307F1A723148FB9009D0BB3 /* EntryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryTableViewController.swift; sourceTree = "<group>"; };
+		6307F1A92314913C009D0BB3 /* EntryDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +66,7 @@
 			isa = PBXGroup;
 			children = (
 				6307F1A22314813D009D0BB3 /* CloudKitJournal.entitlements */,
+				6307F1A623148F69009D0BB3 /* ViewControllers */,
 				6307F19F23147E49009D0BB3 /* ModelControllers */,
 				6307F19C23146B1B009D0BB3 /* Models */,
 				6307F19B231469C6009D0BB3 /* Resources */,
@@ -103,6 +108,15 @@
 				6307F1A423148141009D0BB3 /* CloudKit.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		6307F1A623148F69009D0BB3 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				6307F1A92314913C009D0BB3 /* EntryDetailViewController.swift */,
+				6307F1A723148FB9009D0BB3 /* EntryTableViewController.swift */,
+			);
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -186,6 +200,8 @@
 			files = (
 				6307F1A123147E64009D0BB3 /* EntryController.swift in Sources */,
 				6307F19E23146B58009D0BB3 /* Entry.swift in Sources */,
+				6307F1A823148FB9009D0BB3 /* EntryTableViewController.swift in Sources */,
+				6307F1AA2314913C009D0BB3 /* EntryDetailViewController.swift in Sources */,
 				6307F18A23146945009D0BB3 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

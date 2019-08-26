@@ -46,10 +46,9 @@ extension Entry {
         
         guard let title = ckRecord[EntryConstants.titleKey] as? String,
             let text = ckRecord[EntryConstants.textKey] as? String,
-            let timestamp = ckRecord[EntryConstants.timestampKey] as? Date,
-            let ckRecordID = ckRecord[EntryConstants.ckIdentifierKey] as? CKRecord.ID else { return nil}
+            let timestamp = ckRecord[EntryConstants.timestampKey] as? Date else { return nil}
         
-        self.init(title: title, text: text, timestamp: timestamp, ckRecordID: ckRecordID)
+        self.init(title: title, text: text, timestamp: timestamp, ckRecordID: ckRecord.recordID)
     }
 }
 
